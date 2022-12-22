@@ -10,7 +10,7 @@ import {
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useNavigation } from "@react-navigation/native";
-import { Attractions, Avatar, Hotels, NotFound, Restaurants } from "../assets";
+import { Avatar, CarLogo, Finance, Messages, NotFound } from "../assets";
 import MenuContainer from "../components/MenuContainer";
 
 import { FontAwesome } from "@expo/vector-icons";
@@ -19,7 +19,7 @@ import { getPlacesData } from "../api";
 
 import MapView from "react-native-maps";
 
-const Discover = () => {
+const HomeScreen = () => {
   const navigation = useNavigation();
 
   const [type, setType] = useState("restaurants");
@@ -96,28 +96,28 @@ const Discover = () => {
         <ScrollView>
           <View className="flex-row items-center justify-between px-8 mt-8">
             <MenuContainer
-              key={"hotels"}
+              key={"syncparking"}
               title="לתזמון חניה"
               navi="SyncParkingScreen"
-              imageSrc={Hotels}
+              imageSrc={CarLogo}
               type={type}
               setType={setType}
             />
 
             <MenuContainer
-              key={"attractions"}
+              key={"messages"}
               title="הודעות"
               navi="MessagesScreen"
-              imageSrc={Attractions}
+              imageSrc={Messages}
               type={type}
               setType={setType}
             />
 
             <MenuContainer
-              key={"restaurants"}
+              key={"manageparking"}
               title="ניהול חניה"
               navi="ManageParkingScreen"
-              imageSrc={Restaurants}
+              imageSrc={Finance}
               type={type}
               setType={setType}
             />
@@ -178,4 +178,4 @@ const Discover = () => {
   );
 };
 
-export default Discover;
+export default HomeScreen;

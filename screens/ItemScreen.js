@@ -35,7 +35,7 @@ const ItemScreen = ({ route }) => {
 
           <View className="absolute flex-row inset-x-0 top-5 justify-between px-6">
             <TouchableOpacity
-              onPress={() => navigation.navigate("Discover")}
+              onPress={() => navigation.navigate("HomeScreen")}
               className="w-10 h-10 rounded-md items-center justify-center bg-white"
             >
               <FontAwesome5 name="chevron-left" size={24} color="#06B2BE" />

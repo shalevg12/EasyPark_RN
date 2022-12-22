@@ -11,7 +11,7 @@ import * as Animatable from "react-native-animatable";
 import { useNavigation } from "@react-navigation/native";
 import { HeroImage } from "../assets";
 
-const HomeScreen = () => {
+const WelcomeScreen = () => {
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
@@ -78,4 +78,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default WelcomeScreen;
