@@ -10,7 +10,7 @@ const RegisterScreen = ({ navigation }) => {
   const [imageUrl, setImageUrl] = useState("");
 
   const register = () => {
-    navigation.navigate("Home");
+    navigation.navigate("Welcome");
   };
 
   return (

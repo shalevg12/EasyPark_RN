@@ -27,7 +27,7 @@ const ProfileScreen = () => {
       {/* First Section */}
 
       <View className="flex-1 px-20 mt-20 items-center space-x-2">
-        <TouchableOpacity onPress={() => navigation.navigate("Discover")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
           <View className="w-20 h-20 bg-gray-400 rounded-md items-center justify-center shadow-lg">
             <Image
               source={Avatar}

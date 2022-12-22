@@ -13,7 +13,7 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   const signIn = () => {
-    navigation.navigate("Home");
+    navigation.navigate("Welcome");
   };
 
   return (
