@@ -1,14 +1,16 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
-const MenuContainer = ({ title, imageSrc, type, setType }) => {
+const MenuContainer = ({ title, imageSrc, type, setType, navi }) => {
   const handlePress = () => {
     setType(title.toLowerCase());
   };
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
       className="items-center justify-center space-y-2"
-      onPress={handlePress}
+      onPress={() => navigation.navigate(navi)}
     >
       <View
         className={`w-24 h-24 p-2 shadow-sm rounded-full items-center justify-center ${

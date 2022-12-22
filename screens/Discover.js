@@ -17,6 +17,8 @@ import { FontAwesome } from "@expo/vector-icons";
 import ItemCarDontainer from "../components/ItemCarDontainer";
 import { getPlacesData } from "../api";
 
+import MapView from "react-native-maps";
+
 const Discover = () => {
   const navigation = useNavigation();
 
@@ -47,16 +49,17 @@ const Discover = () => {
   return (
     <SafeAreaView className="flex-1 bg-white relative">
       <View className="flex-row items-center justify-between px-8">
-        <View className="w-12 h-12 bg-gray-400 rounded-md items-center justify-center shadow-lg">
-          <Image
-            source={Avatar}
-            className="w-full h-full rounded-md object-cover"
-          />
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")}>
+          <View className="w-12 h-12 bg-gray-400 rounded-md items-center justify-center shadow-lg">
+            <Image
+              source={Avatar}
+              className="w-full h-full rounded-md object-cover"
+            />
+          </View>
+        </TouchableOpacity>
 
         <View>
           <Text className="text-[40px] text-[#0B646B] font-bold">דף הבית</Text>
-          <Text className="text-[#527283] text-[36px]">לחיפש חניה</Text>
         </View>
       </View>
 
@@ -74,10 +77,14 @@ const Discover = () => {
             setTr_lng(details?.geometry?.viewport?.northeast?.lng);
           }}
           query={{
-            key: "YOUR_API_KEY",
+            key: "AIzaSyBLUuYCtfpgZTJEZrSVEMytQUNlMxYHUDk",
             language: "en",
           }}
         />
+      </View>
+
+      <View className="flex-row items-center bg-white mx-4 rounded-xl py-1 px-4 shadow-lg mt-4">
+        <MapView className="h-40 w-full" />
       </View>
 
       {/* Menu Container */}
@@ -90,7 +97,8 @@ const Discover = () => {
           <View className="flex-row items-center justify-between px-8 mt-8">
             <MenuContainer
               key={"hotels"}
-              title="לגילוי חניה"
+              title="לתזמון חניה"
+              navi="SyncParkingScreen"
               imageSrc={Hotels}
               type={type}
               setType={setType}
@@ -99,14 +107,17 @@ const Discover = () => {
             <MenuContainer
               key={"attractions"}
               title="הודעות"
+              navi="MessagesScreen"
               imageSrc={Attractions}
               type={type}
               setType={setType}
             />
 
             <MenuContainer
+              onPress={() => navigation.navigate("ManageParkingScreen")}
               key={"restaurants"}
-              title="כספים"
+              title="ניהול חניה"
+              navi="ManageParkingScreen"
               imageSrc={Restaurants}
               type={type}
               setType={setType}

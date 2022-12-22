@@ -5,7 +5,7 @@ export const getPlacesData = async (bl_lat, bl_lng, tr_lat, tr_lng, type) => {
     const {
       data: { data },
     } = await axios.get(
-      `https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`,
+      /* `https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary` */ "",
       {
         params: {
           bl_latitude: bl_lat ? bl_lat : "25.15543993776612",
@@ -18,7 +18,8 @@ export const getPlacesData = async (bl_lat, bl_lng, tr_lat, tr_lng, type) => {
           lang: "en_US",
         },
         headers: {
-          "X-RapidAPI-Key": "YOUR_API_KEY",
+          "X-RapidAPI-Key":
+            "da694d2241msh25fb87204223d1cp129708jsn5c44ce22c7a0",
           "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
         },
       }
